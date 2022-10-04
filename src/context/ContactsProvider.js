@@ -12,7 +12,7 @@ const useContacts = () => {
 
 export default useContacts;
 
-export const ContactsProvider = ({ children }) => {
+export function ContactsProvider({ children }) {
   const [contacts, setContacts] = useLocalStorage("contacts", []);
 
   const createContact = (id, name) => {
@@ -26,4 +26,4 @@ export const ContactsProvider = ({ children }) => {
       {children}
     </ContactsContext.Provider>
   );
-};
+}
